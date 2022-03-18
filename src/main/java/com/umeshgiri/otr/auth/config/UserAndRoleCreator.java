@@ -34,6 +34,20 @@ public class UserAndRoleCreator implements ApplicationListener<ContextRefreshedE
             roles.add("read_self");
             groupsWithRoles.put("self_management", roles);
         }//self_management
+
+        {
+            roles = new HashSet<>();
+            roles.add("read_self_ticket");
+            roles.add("book_ticket");
+            roles.add("make_payment");
+            groupsWithRoles.put("ticket_booking", roles);
+        }//book_ticket
+
+        {
+            roles = new HashSet<>();
+            roles.add("ticket_insights");
+            groupsWithRoles.put("ticket_insights", roles);
+        }//ticket_insights
     }
 
     @Value("${app.defaults.user.name}")

@@ -17,9 +17,14 @@ public class UserApi {
     private UserConverter converter;
 
     public UserDto findDtoById(Long id) {
-        final User user = userRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("User", "id", id));
+        final User user = findEntityById(id);
         return converter.convert(user);
+    }
+
+
+    public User findEntityById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User", "id", id));
     }
 
     public User save(User user) {

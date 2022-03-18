@@ -3,7 +3,7 @@ spring:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
   datasource:
-    url: jdbc:mysql://localhost:3306/otr?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/otr?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=Asia/Kathmandu&useLegacyDatetimeCode=false&useUnicode=true&characterEncoding=utf-8
     username: root
     password: root
   jpa:
@@ -16,10 +16,10 @@ spring:
 
 app:
   frontEnd:
-    endPoint: http://localhost:8000
+    endPoint: http://localhost:3000
   auth:
     tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
-    tokenExpirationMsec: 3154000000000
+    tokenExpirationMsec: 604800000
   defaults:
     user:
       name: Umesh Giri
